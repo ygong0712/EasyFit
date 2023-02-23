@@ -1,4 +1,4 @@
-package com.example.cs4365_project;
+package com.example.a4365_project;
 
 import org.junit.Test;
 
