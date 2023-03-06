@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else {
-            text.setText(user.getEmail());
+            text.setText("Hi " + user.getEmail());
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
