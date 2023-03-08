@@ -44,9 +44,9 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
-        editemail = findViewById(R.id.email);
-        editpassword = findViewById(R.id.password);
-        clickbutton = findViewById(R.id.button);
+        editemail = findViewById(R.id.foodtype);
+        editpassword = findViewById(R.id.food1calories);
+        clickbutton = findViewById(R.id.confirmbutton);
         progressBar = findViewById(R.id.progressbar);
         register = findViewById(R.id.registernow);
 

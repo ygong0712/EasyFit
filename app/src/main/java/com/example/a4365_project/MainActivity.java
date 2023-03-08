@@ -8,12 +8,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    Button button;
+    Button buttonl;  //logout button
+    Button buttonc;  //clear button
+    FloatingActionButton button1; //breakfast
+    FloatingActionButton button2; //lunch
+    FloatingActionButton button3; //training
+    FloatingActionButton button4; //dinner
+    FloatingActionButton button5; //snack
     TextView text;
     FirebaseUser user;
     @Override
@@ -22,7 +29,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logout);
+        buttonl = findViewById(R.id.logout);
+        buttonc = findViewById(R.id.clear);
+
+        button1 = findViewById(R.id.floatingActionButton1);
+        button2 = findViewById(R.id.floatingActionButton2);
+        button3 = findViewById(R.id.floatingActionButton3);
+        button4 = findViewById(R.id.floatingActionButton4);
+        button5 = findViewById(R.id.floatingActionButton5);
+
+
         text = findViewById(R.id.user);
         user = mAuth.getCurrentUser();
         if (user == null) {
@@ -33,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             text.setText("Hi " + user.getEmail());
         }
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
@@ -43,5 +59,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //clear the number
+                finish();
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

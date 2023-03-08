@@ -5,32 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".BreakfastCalories">
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:gravity = "center"
         android:layout_width="match_parent"
         android:layout_height="102dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="@string/login" />
+        android:text="Food Entry" />
 
     <EditText
         android:id="@+id/foodtype"
-        android:hint = "@string/email"
         android:layout_width="match_parent"
         android:layout_height="84dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:hint="Food Type"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/food1calories"
-        android:hint = "@string/password"
         android:layout_width="match_parent"
         android:layout_height="91dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Calories"
+        android:inputType="number" />
 
     <ProgressBar
         android:id = "@+id/progressbar"
@@ -42,11 +42,5 @@
         android:id="@+id/confirmbutton"
         android:layout_width="match_parent"
         android:layout_height="69dp"
-        android:text="@string/login" />
-    <TextView
-        android:id = "@+id/registernow"
-        android:text = "@string/clickreg"
-        android:gravity = "center"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"/>
+        android:text="confirm" />
 </LinearLayout>
