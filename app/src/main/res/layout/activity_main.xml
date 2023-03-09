@@ -132,7 +132,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/item1"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -164,7 +164,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/item2"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -196,7 +196,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/item3"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -228,7 +228,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/item4"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -260,7 +260,7 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/item5"
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -17,7 +17,7 @@
         android:text="@string/register" />
 
     <EditText
-        android:id="@+id/foodtype"
+        android:id="@+id/email"
         android:hint = "@string/email"
         android:layout_width="match_parent"
         android:layout_height="84dp"
@@ -25,7 +25,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/food1calories"
+        android:id="@+id/password"
         android:hint = "@string/password"
         android:layout_width="match_parent"
         android:layout_height="91dp"

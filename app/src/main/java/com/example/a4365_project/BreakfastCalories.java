@@ -1,34 +1,24 @@
 package com.example.a4365_project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class BreakfastCalories extends AppCompatActivity {
 
     Button button;
     FirebaseAuth mAuth;
+    EditText foodt, foodc;
 
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//    }
+    public static final String CAL_PREFERENCES = "CalPrefs";
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +26,22 @@ public class BreakfastCalories extends AppCompatActivity {
 
         button = findViewById(R.id.confirmbutton);
 
+        foodt = findViewById(R.id.foodtype);
+        foodc = findViewById(R.id.food1calories);
+        String breakfastNameAdd= foodt.getText().toString();
+        String breakfastCalAdd = foodc.getText().toString();
+
+        SharedPreferences settings = getApplicationContext().getSharedPreferences(CAL_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //do something
+                editor.putString("breakfastName", breakfastNameAdd);
+                editor.putString("breakfastCal", breakfastCalAdd);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
