@@ -3,7 +3,6 @@ package com.example.a4365_project;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -63,23 +62,24 @@ public class MainActivity extends AppCompatActivity {
         //update the calories
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String calValue = extras.getString("cal");
+            Double calValue = extras.getDouble("cal");
             String caltype = extras.getString("type");
+            System.out.println(calValue);
             if(caltype.equals("breakfast")) {
                 //item1.setText("Breakfast: " + calValue);
-                editor.putString("breakfast", calValue);
+                editor.putString("breakfast", calValue.toString());
             } else if (caltype.equals("lunch")){
                 //item2.setText("Lunch: " + calValue);
-                editor.putString("lunch", calValue);
+                editor.putString("lunch", calValue.toString());
             } else if (caltype.equals("exercise")){
                 //item3.setText("Exercise: " + calValue);
-                editor.putString("exercise", calValue);
+                editor.putString("exercise", calValue.toString());
             } else if (caltype.equals("dinner")){
                 //item4.setText("Dinner: " + calValue);
-                editor.putString("dinner", calValue);
+                editor.putString("dinner", calValue.toString());
             } else if (caltype.equals("snack")){
                 //item5.setText("Snack: " + calValue);
-                editor.putString("snack", calValue);
+                editor.putString("snack", calValue.toString());
             }
             editor.commit();
         } else {
@@ -93,21 +93,42 @@ public class MainActivity extends AppCompatActivity {
 
         //update UI
         String breakfastCalories = settings.getString("breakfast", null);
+        Double bf = Double.parseDouble(breakfastCalories);
+        breakfastCalories = (new Integer(bf.intValue())).toString();
+
         String lunchCalories = settings.getString("lunch", null);
+        Double lc = Double.parseDouble(lunchCalories);
+        lunchCalories = (new Integer(lc.intValue())).toString();
+
         String exerciseCalories = settings.getString("exercise", null);
+        Double ec = Double.parseDouble(exerciseCalories);
+        exerciseCalories = (new Integer(ec.intValue())).toString();
+
         String dinnerCalories = settings.getString("dinner", null);
+        Double dc = Double.parseDouble(dinnerCalories);
+        dinnerCalories = (new Integer(dc.intValue())).toString();
+
         String snackCalories = settings.getString("snack", null);
-        int foodSum = Integer.parseInt(breakfastCalories) + Integer.parseInt(lunchCalories)
-                + Integer.parseInt(dinnerCalories) + Integer.parseInt(snackCalories);
-        int totalSum = foodSum - Integer.parseInt(exerciseCalories);
+        Double sc = Double.parseDouble(snackCalories);
+        snackCalories = (new Integer(sc.intValue())).toString();
+
+        Double foodSum = 0.0;
+        Double totalSum = 0.0;
+        if (breakfastCalories != null && lunchCalories != null && dinnerCalories != null && snackCalories != null) {
+            foodSum = Double.parseDouble(breakfastCalories) + Double.parseDouble(lunchCalories)
+                    + Double.parseDouble(dinnerCalories) + Double.parseDouble(snackCalories);
+            totalSum = foodSum - Double.parseDouble(exerciseCalories);
+        }
+
+
         item1.setText("Breakfast: " + breakfastCalories);
         item2.setText("Lunch: " + lunchCalories);
         item3.setText("Exercise: " + exerciseCalories);
         item4.setText("Dinner: " + dinnerCalories);
         item5.setText("Snack: " + snackCalories);
         exerciseSum.setText(exerciseCalories);
-        foodSummation.setText(Integer.toString(foodSum));
-        totalSummation.setText(Integer.toString(totalSum));
+        foodSummation.setText(Double.toString(foodSum));
+        totalSummation.setText(Double.toString(totalSum));
 
 
 
@@ -155,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), LunchCalories.class);
                 intent.putExtra("type", "lunch");
                 startActivity(intent);
                 finish();
@@ -173,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), DinnerCalories.class);
                 intent.putExtra("type", "dinner");
                 startActivity(intent);
                 finish();
@@ -182,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), SnackCalories.class);
                 intent.putExtra("type", "snack");
                 startActivity(intent);
                 finish();
