@@ -29,7 +29,7 @@ public class BreakfastCalories extends AppCompatActivity {
 
         button = findViewById(R.id.confirmbutton);
 
-        trice = findViewById(R.id.rice);
+        trice = findViewById(R.id.age);
         toatmeal = findViewById(R.id.oatmeal);
         tcorn = findViewById(R.id.corn);
         tbread = findViewById(R.id.bread);

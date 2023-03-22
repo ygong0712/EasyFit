@@ -11,9 +11,9 @@
     <TextView
         android:id="@+id/user"
         android:layout_width="411dp"
-        android:layout_height="73dp"
+        android:layout_height="wrap_content"
         android:text="Hi fhuang49@gatech.edu"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TableLayout
 
@@ -275,13 +275,19 @@
     <Button
         android:id="@+id/clear"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="58dp"
         android:text="clear" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="60dp"
         android:text="@string/logout" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Generate Plan" />
 
 </LinearLayout>

@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String CAL_PREFERENCES = "CalPrefs";
     Button buttonl;  //logout button
     Button buttonc;  //clear button
+    Button buttong;
     FloatingActionButton button1; //breakfast
     FloatingActionButton button2; //lunch
     FloatingActionButton button3; //training
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         buttonl = findViewById(R.id.logout);
         buttonc = findViewById(R.id.clear);
+        buttong = findViewById(R.id.generate);
 
         button1 = findViewById(R.id.floatingActionButton1);
         button2 = findViewById(R.id.floatingActionButton2);
@@ -158,6 +160,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //clear the number
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        buttong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //clear the number
+                Intent intent = new Intent(getApplicationContext(), Person.class);
                 startActivity(intent);
                 finish();
             }
