@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         if (extras != null) {
             Double calValue = extras.getDouble("cal");
             String caltype = extras.getString("type");
-            System.out.println(calValue);
+
             if(caltype.equals("breakfast")) {
                 //item1.setText("Breakfast: " + calValue);
                 editor.putString("breakfast", calValue.toString());
