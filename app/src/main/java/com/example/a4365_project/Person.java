@@ -9,6 +9,10 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase:firebase-bom:31.3.0;
+//import com.google.firebase:firebase-database;
 
 public class Person extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -17,6 +21,9 @@ public class Person extends AppCompatActivity {
     EditText age;
     EditText height;
     EditText goal;
+    FirebaseDatabase db;
+    DatabaseReference references;
+
 
 
     @Override
@@ -31,10 +38,23 @@ public class Person extends AppCompatActivity {
         age = findViewById(R.id.age);
         goal = findViewById(R.id.goal);
 
+
         buttonc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Plan.class);
+
+                int iage = Integer.parseInt(age.getText().toString());
+                int iweight = Integer.parseInt(weight.getText().toString());
+                int iheight = Integer.parseInt(height.getText().toString());
+                int igoal = Integer.parseInt(goal.getText().toString());
+
+                Users users = new Users(iweight, iheight, iage, igoal);
+
+                db = FirebaseDatabase.getInstance();
+                references = db.getReference("Users");
+
+
                 intent.putExtra("age", Integer.parseInt(age.getText().toString()));
                 intent.putExtra("weight", Integer.parseInt(weight.getText().toString()));
                 intent.putExtra("height", Integer.parseInt(height.getText().toString()));

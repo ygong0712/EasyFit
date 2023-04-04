@@ -64,7 +64,7 @@ public class BreakfastCalories extends AppCompatActivity {
             public void onClick(View v) {
                 double totalcalorie = 0;
                 if (!TextUtils.isEmpty(trice.getText().toString())) {
-                    totalcalorie += 500;
+                    //totalcalorie += 500;
                     Food rice = new Food("rice");
                     totalcalorie +=  Integer.parseInt(trice.getText().toString()) * rice.calculate();
                 }
