@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.a4365_project.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +24,7 @@ public class Person extends AppCompatActivity {
     EditText goal;
     FirebaseDatabase db;
     DatabaseReference references;
+    //ActivityMainBinding binding;
 
 
 
@@ -38,6 +40,9 @@ public class Person extends AppCompatActivity {
         age = findViewById(R.id.age);
         goal = findViewById(R.id.goal);
 
+        //binding = ActivityMainBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
+
 
         buttonc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +54,12 @@ public class Person extends AppCompatActivity {
                 int iheight = Integer.parseInt(height.getText().toString());
                 int igoal = Integer.parseInt(goal.getText().toString());
 
-                Users users = new Users(iweight, iheight, iage, igoal);
 
                 db = FirebaseDatabase.getInstance();
                 references = db.getReference("Users");
+
+                Users users = new Users(iweight, iheight, iage, igoal);
+                references.child("Feilian").setValue(users);
 
 
                 intent.putExtra("age", Integer.parseInt(age.getText().toString()));
