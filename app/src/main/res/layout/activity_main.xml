@@ -10,10 +10,10 @@
 
     <TextView
         android:id="@+id/user"
-        android:layout_width="wrap_content"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:text="Hi fhuang49@gatech.edu"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TableLayout
 
@@ -80,7 +80,7 @@
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="1500"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="800"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -102,7 +102,7 @@
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="2100"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
@@ -139,7 +139,7 @@
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Breakfast: 400"
+            android:text="Breakfast: 0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 
@@ -171,7 +171,7 @@
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Lunch: 600"
+            android:text="Lunch:0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 
@@ -203,7 +203,7 @@
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Training: 600"
+            android:text="Training: 0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 
@@ -235,7 +235,7 @@
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dinner: 500"
+            android:text="Dinner: 0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     </LinearLayout>
 
@@ -275,13 +275,19 @@
     <Button
         android:id="@+id/clear"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="58dp"
         android:text="clear" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
+        android:layout_height="60dp"
         android:text="@string/logout" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Generate Plan" />
 
 </LinearLayout>

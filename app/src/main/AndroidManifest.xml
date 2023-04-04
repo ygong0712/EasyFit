@@ -29,6 +29,26 @@
             android:name=".BreakfastCalories"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".LunchCalories"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".DinnerCalories"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".SnackCalories"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Person"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Plan"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
 
-public class BreakfastCalories extends AppCompatActivity {
+public class LunchCalories extends AppCompatActivity {
 
     Button button;
     EditText trice, toatmeal, tcorn, tbread, tbeef, tpork, tchicken, tnut, tveggie, tfish, tegg;
@@ -18,9 +18,9 @@ public class BreakfastCalories extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.breakfast_calories);
+        setContentView(R.layout.lunch_calories);
 
-        String calType = "breakfast";
+        String calType = "lunch";
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
