@@ -13,6 +13,7 @@
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:text="Hi fhuang49@gatech.edu"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TableLayout
