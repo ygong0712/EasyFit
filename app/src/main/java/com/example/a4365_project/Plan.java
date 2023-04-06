@@ -56,12 +56,12 @@ public class Plan extends AppCompatActivity {
         Integer goalcalorie = (int) (24 * weight);
         Integer day = (int) (15.4 * (weight - goal));
 
-        carb.setText("Carb range:" + " " + goalcarblow.toString() + "~" + goalcarbhigh.toString());
-        protein.setText("Protein range:" + " " + goalproteinlower.toString() + "~" + goalproteinhigher.toString());
-        fat.setText("Fat range:" + " " + goalfatlow.toString() + "~" + goalfathigh.toString());
+        carb.setText("Carb range:" + " " + goalcarblow.toString() + "g" + "~" + goalcarbhigh.toString() + "g");
+        protein.setText("Protein range:" + " " + goalproteinlower.toString() + "g"+ "~" + goalproteinhigher.toString()+ "g");
+        fat.setText("Fat range:" + " " + goalfatlow.toString() + "g"+ "~" + goalfathigh.toString()+ "g");
         bmitext.setText("Your BMI is:" + " " + bmi.toString());
-        calorie.setText("Your optimal calorie per day is:" + "" + goalcalorie.toString());
-        time.setText("Estimated Time to reach the goal:" + day.toString());
+        calorie.setText("Your optimal calorie per day is: " + "" + goalcalorie.toString() + " cal");
+        time.setText("Estimated Time to reach the goal: " + day.toString() +" days");
 
 
         food.setOnClickListener(new View.OnClickListener() {

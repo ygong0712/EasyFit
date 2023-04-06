@@ -26,19 +26,15 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".BreakfastCalories"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".LunchCalories"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".DinnerCalories"
+            android:name=".BLDCalories"
             android:exported="true">
         </activity>
         <activity
             android:name=".SnackCalories"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Exercise"
             android:exported="true">
         </activity>
         <activity

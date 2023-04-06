@@ -2,6 +2,7 @@ package com.example.a4365_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,12 +14,12 @@ import com.google.android.material.chip.Chip;
 public class SnackCalories extends AppCompatActivity {
 
     Button button;
-    EditText trice, toatmeal, tcorn, tbread, tbeef, tpork, tchicken, tnut, tveggie, tfish, tegg;
-    Chip chip_beef, chip_rice, chip_oatmeal, chip_corn, chip_bread, chip_pork, chip_chicken, chip_nut, chip_veggie, chip_fish, chip_egg;
+    EditText tchocolate, tnut, tveggie, tapple, tbanana, tberry;
+    Chip chip_chocolate,  chip_nut, chip_veggie, chip_apple, chip_banana, chip_berry;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.breakfast_calories);
+        setContentView(R.layout.snack_calories);
 
         String calType = "snack";
 
@@ -29,31 +30,19 @@ public class SnackCalories extends AppCompatActivity {
 
         button = findViewById(R.id.confirmbutton);
 
-        trice = findViewById(R.id.age);
-        toatmeal = findViewById(R.id.oatmeal);
-        tcorn = findViewById(R.id.corn);
-        tbread = findViewById(R.id.bread);
-        tbeef = findViewById(R.id.beef);
-        tpork = findViewById(R.id.pork);
-        tchicken = findViewById(R.id.chicken);
+        tchocolate = findViewById(R.id.chocolate);
         tnut = findViewById(R.id.nut);
         tveggie = findViewById(R.id.veggie);
-        tfish = findViewById(R.id.fish);
-        tegg = findViewById(R.id.egg);
+        tapple = findViewById(R.id.apple);
+        tberry = findViewById(R.id.berry);
+        tbanana = findViewById(R.id.banana);
 
-
-        chip_rice = findViewById(R.id.chip_rice);
-        chip_oatmeal = findViewById(R.id.chip_oatmeal);
-        chip_corn = findViewById(R.id.chip_corn);
-        chip_bread = findViewById(R.id.chip_bread);
-        chip_beef = findViewById(R.id.chip_beef);
-        chip_pork = findViewById(R.id.chip_pork);
-        chip_chicken = findViewById(R.id.chip_chicken);
+        chip_chocolate = findViewById(R.id.chip_chocolate);
         chip_nut = findViewById(R.id.chip_nut);
         chip_veggie = findViewById(R.id.chip_veggie);
-        chip_fish = findViewById(R.id.chip_fish);
-        chip_egg = findViewById(R.id.chip_egg);
-
+        chip_apple = findViewById(R.id.chip_apple);
+        chip_banana = findViewById(R.id.chip_banana);
+        chip_berry = findViewById(R.id.chip_berry);
 
 
         String finalCalType = calType;
@@ -62,49 +51,26 @@ public class SnackCalories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double totalcalorie = 0;
-                if (chip_rice.isChecked()) {
-                    Food rice = new Food("rice");
-                    totalcalorie +=  Integer.parseInt(trice.getText().toString()) * rice.calculate();
-                }
-                if (chip_oatmeal.isChecked()) {
-                    Food oatmeal = new Food("oatmeal");
-                    totalcalorie += Integer.parseInt(toatmeal.getText().toString()) * oatmeal.calculate();
-                }
-                if (chip_corn.isChecked()) {
-                    Food corn = new Food("corn");
-                    totalcalorie += Integer.parseInt(tcorn.getText().toString()) * corn.calculate();
-                }
-                if (chip_bread.isChecked()) {
-                    Food bread = new Food("bread");
-                    totalcalorie += Integer.parseInt(tbread.getText().toString()) * bread.calculate();
-                }
-                if (chip_beef.isChecked()) {
-                    Food beef = new Food("beefe");
-                    totalcalorie += Integer.parseInt(tbeef.getText().toString()) * beef.calculate();
-                }
-                if (chip_pork.isChecked()) {
-                    Food pork = new Food("pork");
-                    totalcalorie += Integer.parseInt(tpork.getText().toString()) * pork.calculate();
-                }
-                if (chip_chicken.isChecked()) {
-                    Food chicken = new Food("chicken");
-                    totalcalorie += Integer.parseInt(tchicken.getText().toString()) * chicken.calculate();
-                }
-                if (chip_nut.isChecked()) {
+
+                if (!TextUtils.isEmpty(tnut.getText().toString()) && chip_nut.isChecked()) {
                     Food nut = new Food("pork");
                     totalcalorie += Integer.parseInt(tnut.getText().toString()) * nut.calculate();
                 }
-                if (chip_veggie.isChecked()) {
+                if (!TextUtils.isEmpty(tveggie.getText().toString()) && chip_veggie.isChecked()) {
                     Food veggie = new Food("veggie");
                     totalcalorie += Integer.parseInt(tveggie.getText().toString()) * veggie.calculate();
                 }
-                if (chip_fish.isChecked()) {
-                    Food fish = new Food("fish");
-                    totalcalorie += Integer.parseInt(tfish.getText().toString()) * fish.calculate();
+                if (!TextUtils.isEmpty(tchocolate.getText().toString()) && chip_chocolate.isChecked()) {
+                    totalcalorie += Integer.parseInt(tchocolate.getText().toString()) * 5.46;
                 }
-                if (chip_egg.isChecked()) {
-                    Food egg = new Food("egg");
-                    totalcalorie += Integer.parseInt(tegg.getText().toString()) * egg.calculate();
+                if (!TextUtils.isEmpty(tapple.getText().toString()) && chip_apple.isChecked()) {
+                    totalcalorie += Integer.parseInt(tapple.getText().toString()) * 0.52;
+                }
+                if (!TextUtils.isEmpty(tbanana.getText().toString()) && chip_banana.isChecked()) {
+                    totalcalorie += Integer.parseInt(tbanana.getText().toString()) * 0.89;
+                }
+                if (!TextUtils.isEmpty(tberry.getText().toString()) && chip_berry.isChecked()) {
+                    totalcalorie += Integer.parseInt(tberry.getText().toString()) * 0.33;
                 }
 
                 String total = String.valueOf(totalcalorie);
