@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BreakfastCalories">
+    tools:context=".BLDCalories">
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -28,26 +28,26 @@
             android:orientation="vertical">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_walk"
+                android:id="@+id/chip_rice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Walk" />
+                android:text="Walking" />
 
 
         </LinearLayout>
 
         <EditText
-            android:id="@+id/age"
+            android:id="@+id/rice"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in minutes" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +68,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Bread" />
+                android:text="Running " />
 
 
         </LinearLayout>
@@ -81,7 +81,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,7 +102,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Corn" />
+                android:text="Cycling" />
 
 
         </LinearLayout>
@@ -115,7 +115,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 
@@ -137,7 +137,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Oat" />
+                android:text="Swim " />
 
 
         </LinearLayout>
@@ -150,7 +150,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
     <LinearLayout
@@ -171,7 +171,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Beef" />
+                android:text="Aerobics" />
 
 
         </LinearLayout>
@@ -184,7 +184,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 
@@ -206,7 +206,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Pork" />
+                android:text="Hiking" />
 
 
         </LinearLayout>
@@ -219,7 +219,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 
@@ -241,7 +241,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Chicken" />
+                android:text="Yoga" />
 
 
         </LinearLayout>
@@ -254,7 +254,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 
@@ -276,7 +276,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Fish" />
+                android:text="Elliptic" />
 
 
         </LinearLayout>
@@ -289,7 +289,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 
@@ -311,7 +311,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:checkable="true"
-                android:text="Egg" />
+                android:text="Skiing" />
 
 
         </LinearLayout>
@@ -324,7 +324,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
     <LinearLayout
@@ -343,9 +343,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:checkable="true"
-                android:text="Nut" />
+                android:gravity="center"
+                android:text="Strength"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="12sp" />
 
 
         </LinearLayout>
@@ -358,42 +360,7 @@
             android:gravity="center"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:hint="Enter amount in g" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_veggie"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:checkable="true"
-                android:text="Veggie" />
-
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/veggie"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:hint="Enter amount in g" />
+            android:hint="Enter amount in hours" />
     </LinearLayout>
 
 

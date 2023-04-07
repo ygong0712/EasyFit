@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), BLDCalories.class);
                 intent.putExtra("type", "breakfast");
                 startActivity(intent);
                 finish();
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), BLDCalories.class);
                 intent.putExtra("type", "lunch");
                 startActivity(intent);
                 finish();
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), BLDCalories.class);
                 intent.putExtra("type", "dinner");
                 startActivity(intent);
                 finish();
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BreakfastCalories.class);
+                Intent intent = new Intent(getApplicationContext(), SnackCalories.class);
                 intent.putExtra("type", "snack");
                 startActivity(intent);
                 finish();
