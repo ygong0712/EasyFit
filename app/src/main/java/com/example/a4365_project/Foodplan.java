@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Foodplan extends AppCompatActivity {
 
@@ -17,8 +19,12 @@ public class Foodplan extends AppCompatActivity {
     private  Integer weight;
     private  Integer height;
     private  Integer goal;
+    private String usermail;
+    private String username;
     private TextView bc, bp, bf, lc, lp, lf, dc, dp, df, bm, lm, dm;
     private Button share;
+    FirebaseDatabase db;
+    DatabaseReference references;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,17 +65,30 @@ public class Foodplan extends AppCompatActivity {
 
 
 
-        bc.setText(bcarb.toString() + "g");
-        lc.setText(bcarb.toString() +"g");
-        dc.setText("0" + "g");
+        bc.setText("c" + bcarb.toString() + "g");
+        lc.setText("c" + bcarb.toString() +"g");
+        dc.setText("c" + "0" + "g");
 
-        bp.setText(bprotein.toString() + "g");
-        lp.setText(bprotein.toString() + "g");
-        dp.setText(bprotein.toString() + "g");
+        bp.setText("p" + bprotein.toString() + "g");
+        lp.setText("p" + bprotein.toString() + "g");
+        dp.setText("p" + bprotein.toString() + "g");
 
-        bf.setText(bfat.toString() + "g");
-        lf.setText(bfat.toString() + "g");
-        df.setText(bbfat.toString() + "g");
+        bf.setText("f" + bfat.toString() + "g");
+        lf.setText("f" + bfat.toString() + "g");
+        df.setText("f" + bbfat.toString() + "g");
+
+        db = FirebaseDatabase.getInstance();
+        references = db.getReference("ShareContent");
+
+        usermail = mAuth.getCurrentUser().getEmail();
+        username = usermail.substring(0,usermail.indexOf("@"));
+
+        //String tempname = "Testman";
+
+        ShareContent sharing = new ShareContent(bcarb,bcarb,0,bprotein,bprotein,bprotein,bfat,bfat,bbfat);
+        references.child(username).setValue(sharing);
+
+
 
 
         Integer oat = (bcarb / 12) * 100;

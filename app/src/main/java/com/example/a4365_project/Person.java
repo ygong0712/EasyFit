@@ -18,8 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Person extends AppCompatActivity {
     private FirebaseAuth mAuth;
     Button buttonc;
-    String usermail;
-    String username;
+    private String usermail;
+    private String username;
     EditText weight;
     EditText age;
     EditText height;
