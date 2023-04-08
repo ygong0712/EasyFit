@@ -155,7 +155,7 @@
                 android:id="@+id/share"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:text="Share you plan" />
+                android:text="Share your plan" />
 
 
         </LinearLayout>

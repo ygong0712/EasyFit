@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Person extends AppCompatActivity {
     private FirebaseAuth mAuth;
     Button buttonc;
+    String usermail;
+    String username;
     EditText weight;
     EditText age;
     EditText height;
@@ -58,8 +60,13 @@ public class Person extends AppCompatActivity {
                 db = FirebaseDatabase.getInstance();
                 references = db.getReference("Users");
 
+                usermail = mAuth.getCurrentUser().getEmail();
+                username = usermail.substring(0,usermail.indexOf("@"));
+
+                //String tempname = "Testman";
+
                 Users users = new Users(iweight, iheight, iage, igoal);
-                references.child("Feilian").setValue(users);
+                references.child(username).setValue(users);
 
 
                 intent.putExtra("age", Integer.parseInt(age.getText().toString()));

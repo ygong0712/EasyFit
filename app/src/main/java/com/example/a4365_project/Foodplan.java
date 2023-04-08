@@ -88,7 +88,7 @@ public class Foodplan extends AppCompatActivity {
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Foodplan.class);
+                Intent intent = new Intent(getApplicationContext(), SocialPlatform.class);
                 intent.putExtra("age", age);
                 intent.putExtra("weight", weight);
                 intent.putExtra("height", height);
