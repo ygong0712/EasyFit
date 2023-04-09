@@ -49,6 +49,10 @@
             android:name=".Foodplan"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".SocialPlatform"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
