@@ -13,15 +13,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
+            android:background="#6200ED"
             android:padding="16dp"
             android:text="Social Platform"
+            android:textColor="#FEFEFE"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="608dp">
+        android:layout_height="608dp"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:id="@+id/social_page"
@@ -35,25 +38,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
                 android:text="Testman: hello world"
                 android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <TextView
                 android:id="@+id/test2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
-                android:text="Testman: hello world"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:text="derrickgong0712: hello world"
                 android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <TextView
                 android:id="@+id/test3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
-                android:text="Testman: hello world"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:text="fhuang49: hello world"
                 android:textSize="16sp" />
 
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <Button
                 android:id="@+id/back"
