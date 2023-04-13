@@ -3,8 +3,12 @@ package com.example.a4365_project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Foodplan extends AppCompatActivity {
+public class Foodplan extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private FirebaseAuth mAuth;
     private Integer age;
@@ -21,7 +25,8 @@ public class Foodplan extends AppCompatActivity {
     private  Integer goal;
     private String usermail;
     private String username;
-    private TextView bc, bp, bf, lc, lp, lf, dc, dp, df, bm, lm, dm;
+    private TextView bc, bp, bf, lc, lp, lf, dc, dp, df;
+    private Spinner bm, lm, dm;
     private Button share;
     FirebaseDatabase db;
     DatabaseReference references;
@@ -38,9 +43,9 @@ public class Foodplan extends AppCompatActivity {
         dc = findViewById(R.id.dcarb);
         df = findViewById(R.id.dfat);
         dp = findViewById(R.id.dprotein);
-        bm = findViewById(R.id.bm);
-        lm = findViewById(R.id.lm);
-        dm = findViewById(R.id.dm);
+        bm = findViewById(R.id.bspinner);
+        lm = findViewById(R.id.lspinner);
+        dm = findViewById(R.id.dspinner);
         share = findViewById(R.id.share);
 
 
@@ -94,15 +99,26 @@ public class Foodplan extends AppCompatActivity {
 
         Integer oat = (bcarb / 12) * 100;
         Integer egg = (bprotein /13) * 100;
-        bm.setText("Example menu: " + "oatmeal " + oat.toString() +"g" + ", " + "egg " + egg.toString() +"g");
+        //bm.setText("Example menu: " + "oatmeal " + oat.toString() +"g" + ", " + "egg " + egg.toString() +"g");
 
         Integer chicken = (bprotein / 31) * 100;
         Integer rice = (bcarb / 28) * 100;
-        lm.setText("Example menu: " + "rice " + rice.toString() +"g" +", " + "chicken " + chicken.toString() +"g" + ", " + "veggies");
+        //lm.setText("Example menu: " + "rice " + rice.toString() +"g" +", " + "chicken " + chicken.toString() +"g" + ", " + "veggies");
 
         Integer beef = (bprotein / 22) * 100;
-        dm.setText("Example menu: " + "beef " + beef.toString() + "g" + ", " + "veggies");
+        //dm.setText("Example menu: " + "beef " + beef.toString() + "g" + ", " + "veggies");
 
+
+        ArrayAdapter<CharSequence> badapter = ArrayAdapter.createFromResource(this, R.array.bfoods, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> ladapter = ArrayAdapter.createFromResource(this, R.array.lfoods, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> dadapter = ArrayAdapter.createFromResource(this, R.array.lfoods, android.R.layout.simple_spinner_item);
+        badapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        bm.setAdapter(badapter);
+        bm.setOnItemSelectedListener(this);
+        lm.setAdapter(ladapter);
+        lm.setOnItemSelectedListener(this);
+        dm.setAdapter(dadapter);
+        dm.setOnItemSelectedListener(this);
 
         // share the food plan with other users using firebase
         share.setOnClickListener(new View.OnClickListener() {
@@ -113,5 +129,16 @@ public class Foodplan extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

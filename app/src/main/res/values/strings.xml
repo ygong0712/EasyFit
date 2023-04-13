@@ -16,4 +16,23 @@
     <string name="clicklog">Click to login</string>
     <string name="clickreg">Click to register</string>
     <string name="logout">Log out</string>
+
+
+    <string-array name="bfoods">
+        <item>Eggs, Milk and Bread</item>
+        <item>Eggs, Tea and Corn</item>
+        <item>Chicken breast, Coffee and Oatmeal</item>
+    </string-array>
+
+    <string-array name="lfoods">
+        <item>Chicken, Diet Coke, Rice and Veggies:broccoli, tomato, lettuce and etc</item>
+        <item>Beef, Tea, Corns and Veggies:broccoli, tomato, lettuce and etc</item>
+        <item>Any meet, non-sugar drinks, Noodles and Veggies:broccoli, tomato, lettuce and etc</item>
+    </string-array>
+
+    <string-array name="dfoods">
+        <item>Beef, Diet Cokeand Veggies:broccoli, tomato, lettuce and etc</item>
+        <item>Chicken, Tea and Veggies:broccoli, tomato, lettuce and etc</item>
+        <item>Any meet, non-sugar drinks and Veggies:broccoli, tomato, lettuce and etc</item>
+    </string-array>
 </resources>
