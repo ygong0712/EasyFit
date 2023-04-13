@@ -10,7 +10,8 @@ public class ShareContent {
     int bf;
     int lf;
     int df;
-    public ShareContent(int bc, int lc, int dc, int bp, int lp, int dp, int bf, int lf, int df) {
+    private String username;
+    public ShareContent(String username, int bc, int lc, int dc, int bp, int lp, int dp, int bf, int lf, int df) {
         this.bc = bc;
         this.lc = lc;
         this.bp = bp;
@@ -20,9 +21,10 @@ public class ShareContent {
         this.bf = bf;
         this.lf = lf;
         this.df = df;
-
+        this.username = username;
     }
-
+    public String getUsername() { return username; }
+    public void setUsername(String username) {this.username = username;}
     public int getBc() {
         return bc;
     }
