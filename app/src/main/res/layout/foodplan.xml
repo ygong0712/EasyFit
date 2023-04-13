@@ -15,7 +15,8 @@
 
             android:padding="16dp"
             android:text="Food Plan"
-            android:textSize="20sp"
+            android:gravity="center"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 

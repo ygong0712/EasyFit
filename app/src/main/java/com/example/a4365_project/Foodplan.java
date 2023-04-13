@@ -65,17 +65,18 @@ public class Foodplan extends AppCompatActivity {
 
 
 
-        bc.setText("c: " + bcarb.toString() + "g");
-        lc.setText("c: " + bcarb.toString() +"g");
-        dc.setText("c: " + "0" + "g");
+        bc.setText("carb: " + bcarb.toString() + "g");
+        lc.setText("carb: " + bcarb.toString() +"g");
+        dc.setText("carb: " + "0" + "g");
 
-        bp.setText("p: " + bprotein.toString() + "g");
-        lp.setText("p: " + bprotein.toString() + "g");
-        dp.setText("p: " + bprotein.toString() + "g");
+        bp.setText("protein: " + bprotein.toString() + "g");
+        lp.setText("protein: " + bprotein.toString() + "g");
+        dp.setText("protein: " + bprotein.toString() + "g");
 
-        bf.setText("f: " + bfat.toString() + "g");
-        lf.setText("f: " + bfat.toString() + "g");
-        df.setText("f: " + bbfat.toString() + "g");
+        bf.setText("fat: " + bfat.toString() + "g");
+        lf.setText("fat: " + bfat.toString() + "g");
+        df.setText("fat: " + bbfat.toString() + "g");
+
 
         db = FirebaseDatabase.getInstance();
         references = db.getReference("ShareContent");
