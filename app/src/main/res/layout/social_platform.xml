@@ -40,12 +40,31 @@
                 android:padding="4dp"
                 android:paddingTop="1dp"
                 android:paddingBottom="1dp"
-                android:text="Testman: hello world"
+                android:text="Testman"
                 android:textSize="16sp" />
 
-            <Space
+            <TextView
+                android:id="@+id/post1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:text="Topost"
+                android:textSize="16sp" />
+
+
+            <EditText
+                android:id="@+id/comment1"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:hint="Make Comment here" />
+
+            <Button
+                android:id="@+id/submit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="submit" />
 
             <TextView
                 android:id="@+id/test2"
@@ -54,12 +73,30 @@
                 android:padding="4dp"
                 android:paddingTop="1dp"
                 android:paddingBottom="1dp"
-                android:text="derrickgong0712: hello world"
+                android:text="derrickgong0712@gmail.com"
                 android:textSize="16sp" />
 
-            <Space
+            <TextView
+                android:id="@+id/post2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:text="Topost"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/comment2"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:hint="Make Comment here" />
+
+            <Button
+                android:id="@+id/submit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="submit" />
 
             <TextView
                 android:id="@+id/test3"
@@ -68,13 +105,43 @@
                 android:padding="4dp"
                 android:paddingTop="1dp"
                 android:paddingBottom="1dp"
-                android:text="fhuang49: hello world"
+                android:text="fhuang49@gatech.edu"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/post3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:text="Topost"
                 android:textSize="16sp" />
 
 
-            <Space
+            <EditText
+                android:id="@+id/comment3"
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="42dp"
+                android:hint="Make Comment here" />
+
+            <Button
+                android:id="@+id/submit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="submit" />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="32dp" />
+
+            <Button
+                android:id="@+id/post"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="Make a post" />
 
             <Button
                 android:id="@+id/back"

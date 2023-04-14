@@ -4,15 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Food Plan"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Back" />
+
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="58dp"
+
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Food Plan"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

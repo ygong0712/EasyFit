@@ -24,6 +24,7 @@ public class Plan extends AppCompatActivity {
     private  TextView calorie;
     private  TextView time;
     private Button food;
+    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class Plan extends AppCompatActivity {
         calorie = findViewById(R.id.calorie);
         time = findViewById(R.id.time);
         food = findViewById(R.id.button);
+        back = findViewById(R.id.buttonb);
+
+
 
         mAuth = FirebaseAuth.getInstance();
         Bundle extras = getIntent().getExtras();
@@ -72,6 +76,15 @@ public class Plan extends AppCompatActivity {
                 intent.putExtra("weight", weight);
                 intent.putExtra("height", height);
                 intent.putExtra("goal", goal);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }

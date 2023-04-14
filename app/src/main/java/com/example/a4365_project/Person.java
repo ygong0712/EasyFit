@@ -8,7 +8,6 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.a4365_project.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,6 +25,7 @@ public class Person extends AppCompatActivity {
     EditText goal;
     FirebaseDatabase db;
     DatabaseReference references;
+    Button buttonb;
     //ActivityMainBinding binding;
 
 
@@ -41,7 +41,7 @@ public class Person extends AppCompatActivity {
         height = findViewById(R.id.height);
         age = findViewById(R.id.age);
         goal = findViewById(R.id.goal);
-
+        buttonb = findViewById(R.id.backbutton);
         //binding = ActivityMainBinding.inflate(getLayoutInflater());
         //setContentView(binding.getRoot());
 
@@ -73,6 +73,15 @@ public class Person extends AppCompatActivity {
                 intent.putExtra("weight", Integer.parseInt(weight.getText().toString()));
                 intent.putExtra("height", Integer.parseInt(height.getText().toString()));
                 intent.putExtra("goal", Integer.parseInt(goal.getText().toString()));
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        buttonb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }

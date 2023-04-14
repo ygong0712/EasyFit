@@ -53,6 +53,10 @@
             android:name=".SocialPlatform"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".Post"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

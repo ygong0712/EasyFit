@@ -28,6 +28,7 @@ public class Foodplan extends AppCompatActivity implements AdapterView.OnItemSel
     private TextView bc, bp, bf, lc, lp, lf, dc, dp, df;
     private Spinner bm, lm, dm;
     private Button share;
+    private Button back;
     FirebaseDatabase db;
     DatabaseReference references;
     @Override
@@ -47,7 +48,7 @@ public class Foodplan extends AppCompatActivity implements AdapterView.OnItemSel
         lm = findViewById(R.id.lspinner);
         dm = findViewById(R.id.dspinner);
         share = findViewById(R.id.share);
-
+        back = findViewById(R.id.back);
 
         mAuth = FirebaseAuth.getInstance();
         Bundle extras = getIntent().getExtras();
@@ -125,6 +126,14 @@ public class Foodplan extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SocialPlatform.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
