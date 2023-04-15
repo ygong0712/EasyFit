@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#6200ED"
+            android:padding="16dp"
+            android:text="Your comments"
+            android:textColor="#FEFEFE"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="608dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/social_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/post1"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Post" />
+            <TextView
+                android:id="@+id/comment1"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Comment" />
+            <TextView
+                android:id="@+id/post2"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Post" />
+            <TextView
+                android:id="@+id/comment2"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Comment" />
+            <TextView
+                android:id="@+id/post3"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Post" />
+            <TextView
+                android:id="@+id/comment3"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:hint="Comment" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <ProgressBar
+                android:id="@+id/loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Back" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

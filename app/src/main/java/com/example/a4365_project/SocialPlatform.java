@@ -27,18 +27,17 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SocialPlatform extends AppCompatActivity{
     private FirebaseAuth mAuth;
     private String usermail,username;
-    private Button back, post,submit1, submit2, submit3;
+    private Button back, post,submit1, submit2, submit3, commentbutton;
     private LinearLayout socialPage;
     private TextView test1, test2, test3, post1, post2, post3;
     private EditText comment1, comment2, comment3;
     private FirebaseUser user;
     private ProgressBar loadingPB;
-    private ArrayList<String> emaillist, postlist;
+    private ArrayList<String> emaillist, postlist, reflist;
 
     FirebaseFirestore db;
     @Override
@@ -57,6 +56,7 @@ public class SocialPlatform extends AppCompatActivity{
         submit1 = findViewById(R.id.submit1);
         submit2 = findViewById(R.id.submit2);
         submit3 = findViewById(R.id.submit3);
+        commentbutton = findViewById(R.id.commentbutton);
 
         post = findViewById(R.id.post);
         comment1 = findViewById(R.id.comment1);
@@ -72,7 +72,7 @@ public class SocialPlatform extends AppCompatActivity{
 
         emaillist = new ArrayList<>();
         postlist = new ArrayList<>();
-
+        reflist = new ArrayList<>();
         db.collection("Post").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -92,9 +92,10 @@ public class SocialPlatform extends AppCompatActivity{
                                 // that list to our object class.
                                 String email = d.getString("email");
                                 String post = d.getString("post");
+                                String ref = d.getId();
                                 emaillist.add(email);
                                 postlist.add(post);
-
+                                reflist.add(ref);
                                 // and we will pass this object class
                                 // inside our arraylist which we have
                                 // created for recycler view.
@@ -102,11 +103,21 @@ public class SocialPlatform extends AppCompatActivity{
                             }
 
                             test1.setText(emaillist.get(0));
-                            test2.setText(emaillist.get(1));
-                            test3.setText(emaillist.get(2));
+                            if (emaillist.size() > 1) {
+                                test2.setText(emaillist.get(1));
+                            }
+                            if (emaillist.size() > 2) {
+                                test3.setText(emaillist.get(2));
+                            }
+
                             post1.setText("Post: " + postlist.get(0));
-                            post2.setText("Post: " + postlist.get(1));
-                            post3.setText("Post: " + postlist.get(2));
+                            if (postlist.size() > 1) {
+                                post2.setText("Post: " + postlist.get(1));
+                            }
+                            if (postlist.size() > 2) {
+                                post3.setText("Post: " + postlist.get(2));
+                            }
+
                         } else {
                             // if the snapshot is empty we are displaying a toast message.
                             Toast.makeText(SocialPlatform.this, "No data found in Database", Toast.LENGTH_SHORT).show();
@@ -145,7 +156,7 @@ public class SocialPlatform extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String tocomment = comment1.getText().toString();
-                addDataToFirestore(tocomment, test1.getText().toString());
+                addDataToFirestore(tocomment, test1.getText().toString(), reflist.get(0), postlist.get(0));
             }
         });
 
@@ -153,7 +164,7 @@ public class SocialPlatform extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String tocomment = comment2.getText().toString();
-                addDataToFirestore(tocomment, test2.getText().toString());
+                addDataToFirestore(tocomment, test2.getText().toString(), reflist.get(1), postlist.get(1));
             }
         });
 
@@ -161,7 +172,16 @@ public class SocialPlatform extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String tocomment = comment3.getText().toString();
-                addDataToFirestore(tocomment, test3.getText().toString());
+                addDataToFirestore(tocomment, test3.getText().toString(), reflist.get(2), postlist.get(2));
+            }
+        });
+
+        commentbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Comment.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -170,12 +190,13 @@ public class SocialPlatform extends AppCompatActivity{
     }
 
 
-    private void addDataToFirestore(String comment, String target) {
+    private void addDataToFirestore(String comment, String target, String postid, String content) {
         CollectionReference dbpost = db.collection(user.getEmail());
-        Map<String, String> usercomment = new HashMap<>();
+        HashMap usercomment = new HashMap();
         usercomment.put("target", target);
         usercomment.put("comment", comment);
-
+        usercomment.put("postid", postid);
+        usercomment.put("content", content);
         // below method is use to add data to Firebase Firestore.
         dbpost.add(usercomment).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

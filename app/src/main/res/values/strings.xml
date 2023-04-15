@@ -27,18 +27,18 @@
     <string-array name="lfoods">
         <item>Chicken, Diet Coke, Rice and Veggies</item>
         <item>Beef, Tea, Corns and Veggies</item>
-        <item>Any meet, non-sugar drinks, Noodles and Veggies</item>
+        <item>Any meat, non-sugar drinks, Noodles and Veggies</item>
         <item>Beef, Diet Cokeand Veggies</item>
         <item>Chicken, Tea and Veggies</item>
-        <item>Any meet, non-sugar drinks and Veggies</item>
+        <item>Any meat, non-sugar drinks and Veggies</item>
     </string-array>
 
     <string-array name="dfoods">
         <item>Beef, Diet Cokeand Veggies</item>
         <item>Chicken, Tea and Veggies</item>
-        <item>Any meet, non-sugar drinks and Veggies</item>
+        <item>Any meat, non-sugar drinks and Veggies</item>
         <item>Chicken, Diet Coke, Rice and Veggies</item>
         <item>Beef, Tea, Corns and Veggies</item>
-        <item>Any meet, non-sugar drinks, Noodles and Veggies</item>
+        <item>Any meat, non-sugar drinks, Noodles and Veggies</item>
     </string-array>
 </resources>

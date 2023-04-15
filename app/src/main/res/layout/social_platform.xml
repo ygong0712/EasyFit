@@ -140,13 +140,19 @@
             <Button
                 android:id="@+id/post"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="40dp"
                 android:text="Make a post" />
+
+            <Button
+                android:id="@+id/commentbutton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="See your comment" />
 
             <Button
                 android:id="@+id/back"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="40dp"
                 android:text="Back to home menu" />
 
 
