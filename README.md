@@ -10,10 +10,15 @@ Finally, EasyFit will provide users with a social platform for sharing their foo
 
 To install and run a local development version of EasyFit, follow these instructions.
 
-### Source Code
-
-You can fork or download the source code from https://github.com/ygong0712/cs4365_project
+### Steps to Install
+1. Download the Android Studio installation file from the official website.
+2. Double-click the downloaded file to launch the Android Studio Setup Wizard.
+3. Select the components you want to install, and then click "Next".
+4. Choose the installation location, or accept the default location, and then click "Next".
+5. Choose whether to create a desktop shortcut and whether to run Android Studio now, and then click "Install".
+6. Wait for the installation process to complete. This may take a few minutes depending on your system's performance.
+7. Once the installation is complete, click "Finish" to exit the Setup Wizard.
 
 ### Running locally
 
-To build and run the application locally, download Android Studio and virtue device. Then build and run using the simulator.
+To build and run the application locally, download the virtue device. Then build and run using the simulator.
